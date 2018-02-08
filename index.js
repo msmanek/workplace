@@ -11,12 +11,19 @@ const FB = require('fb');
       FB.setAccessToken(accessToken);
     };
 
-    const postToGroup = (groupID, data, callback) => {
-      const safeCallback = callback || function () {};
-      const path = `${groupID}/feed`;
-      FB.api(path, 'post', {
-        message: data.message,
-      }, safeCallback);
+    const postToGroup = async function postToGroup(groupID, data) {
+      return new Promise((resolve, reject) => {
+        const path = `${groupID}/feed`;
+        FB.api(path, 'post', {
+          message: data.message,
+        }, (res) => {
+          if (res.error) {
+            reject(res.error);
+          } else {
+            resolve(res);
+          }
+        });
+      });
     };
 
     return {
