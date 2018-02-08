@@ -1,6 +1,6 @@
 {
   "name": "workplace",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "API wrapper for Workplace ",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "fb": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
   }
 }

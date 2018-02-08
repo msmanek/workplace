@@ -1,27 +1,28 @@
-(() => {
-  var WP = (() => {
-    const FB = require('fb');
+const FB = require('fb');
 
+(() => {
+  const WP = (() => {
     /*
     *  Initialize the workplace API as a wrapper on the request package
     *
-    *  @param access_token: the bearer auth token for the API
+    *  @param accessToken: the bearer auth token for the API
     */
-    var setAccessToken = (access_token) => {
-      FB.setAccessToken(access_token);
-    }
+    const setAccessToken = (accessToken) => {
+      FB.setAccessToken(accessToken);
+    };
 
-    var postToGroup = (group_id, data, callback) => {
-      callback = callback || () => {};
-      FB.api(group_id + '/feed', 'post', {
+    const postToGroup = (groupID, data, callback) => {
+      const safeCallback = callback || function () {};
+      const path = `${groupID}/feed`;
+      FB.api(path, 'post', {
         message: data.message,
-      }, callback);
-    }
+      }, safeCallback);
+    };
 
     return {
-      setAccessToken: setAccessToken,
-      postToGroup: postToGroup,
-    }){};
-  };
+      setAccessToken,
+      postToGroup,
+    };
+  })();
   module.exports = WP;
 })();
