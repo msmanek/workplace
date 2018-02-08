@@ -9,6 +9,6 @@
   "author": "LukeWalsh",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.83.0"
+    "fb": "^2.0.0"
   }
 }
