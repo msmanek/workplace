@@ -1,6 +1,6 @@
 {
   "name": "workplace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "API wrapper for Workplace ",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "LukeWalsh",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.83.0"
+    "fb": "^2.0.0"
   }
 }
