@@ -1,1 +1,0 @@
-var WP = require('workplace');

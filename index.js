@@ -1,4 +1,7 @@
 const FB = require('fb');
+const Message = require('./util/Message.js');
+const MessageTypes = require('./util/MessageTypes.js');
+const SendMessageHelpers = require('./helpers/SendMessage.js');
 
 (() => {
   const WP = (() => {
@@ -26,17 +29,44 @@ const FB = require('fb');
     const postToGroup = async function postToGroup(groupID, data) {
       return new Promise((resolve, reject) => {
         const path =
-          data.hasOwnProperty('url') ? `${groupID}/photos` : `${groupID}/feed`;
+          Object.prototype.hasOwnProperty.call(data, 'url') ? `${groupID}/photos` : `${groupID}/feed`;
 
         FB.api(path, 'post', data, (res) => {
-          res.hasOwnProperty('error') ? reject(res.error) : resolve(res);
+          if (Object.prototype.hasOwnProperty.call(res, 'error')) {
+            reject(res.error);
+          } else {
+            resolve(res);
+          }
         });
       });
     };
 
+    const sendMessage = async function sendMessage(recipient, message) {
+      return new Promise((resolve, reject) => {
+        const messagePayload =
+          SendMessageHelpers.getMessagePayloadObject(message);
+        messagePayload.recipient =
+          SendMessageHelpers.getRecipientPayloadObject(recipient);
+
+        const path = '/me/messages';
+
+        FB.api(path, 'post', messagePayload, (res) => {
+          if (Object.prototype.hasOwnProperty.call(res, 'error')) {
+            reject(res.error);
+          } else {
+            resolve(res);
+          }
+        });
+      });
+    };
+
+
     return {
       setAccessToken,
       postToGroup,
+      sendMessage,
+      MessageTypes,
+      Message,
     };
   })();
   module.exports = WP;
