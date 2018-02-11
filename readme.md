@@ -2,6 +2,13 @@
 
 This is a wrapper for the Workplace Platform API. It has been designed to be easily used with promises. The api docs can be seen at: https://developers.facebook.com/docs/workplace/integrations/custom-integrations/reference
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [API Reference](#api-reference)
+  - [Making a Post](#making-a-post)
+  - [Sending Messages](#sending-messages)
+
 ## Getting Started
 
 To install the package, simply run:
