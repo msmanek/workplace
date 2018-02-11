@@ -8,6 +8,7 @@ This is a wrapper for the Workplace Platform API. It has been designed to be eas
 - [API Reference](#api-reference)
   - [Making a Post](#making-a-post)
   - [Sending Messages](#sending-messages)
+  - [FB API Object](#fb-api-object)
 
 ## Getting Started
 
@@ -75,5 +76,15 @@ Then specify IDs and send the message away!
 ```
 await WP.sendMessage(<id(s)>, message);
 ```
+
+### FB API Object
+
+The FB API is directly exposed for anything that this API wrapper does not include. It can be accessed in the following way:
+```
+const fbAPI = WP.api;
+```
+This API is taken from the [npm package FB](https://www.npmjs.com/package/fb)
+
+Workplace integrations have the ability to send a variety of message types directly or to groups of individuals. Specifically, you can send:
 
 Made with <3 in London

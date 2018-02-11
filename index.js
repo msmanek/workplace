@@ -67,6 +67,7 @@ const SendMessageHelpers = require('./helpers/SendMessage.js');
       sendMessage,
       MessageTypes,
       Message,
+      api: FB.api,
     };
   })();
   module.exports = WP;
