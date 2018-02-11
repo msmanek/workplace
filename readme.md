@@ -85,6 +85,4 @@ const fbAPI = WP.api;
 ```
 This API is taken from the [npm package FB](https://www.npmjs.com/package/fb)
 
-Workplace integrations have the ability to send a variety of message types directly or to groups of individuals. Specifically, you can send:
-
 Made with <3 in London
