@@ -57,15 +57,15 @@ const message = WP.Message.Text('hello, world');
 
 // hosted and local images
 const imageMessageFromURL = WP.Message.Image('example.com/image.jpg');
-const localImageMessage = WP.Message.Image(fs.createReadStream('path/to/file.jpg'));
+const localImageMessage = WP.Message.LocalImage('path/to/file.jpg');
 
 // hosted and local videos
 const videoMessageFromURL = WP.Message.Video('example.com/video.mp4');
-const localVideoMessage = WP.Message.Video(fs.createReadStream('path/to/file.mp4'));
+const localVideoMessage = WP.Message.LocalVideo('path/to/file.mp4');
 
 // hosted and local audio files
 const audioMessageFromURL = WP.Message.Audio('example.com/video.mp3');
-const localAudioMessage = WP.Message.Audio(fs.createReadStream('path/to/file.mp3'));
+const localAudioMessage = WP.Message.LocalAudio('path/to/file.mp3');
 
 // send a custom json message template
 const messageTemplate = WP.Message.Template(payload)
