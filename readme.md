@@ -66,6 +66,9 @@ const localVideoMessage = WP.Message.Video(fs.createReadStream('path/to/file.mp4
 // hosted and local audio files
 const audioMessageFromURL = WP.Message.Audio('example.com/video.mp3');
 const localAudioMessage = WP.Message.Audio(fs.createReadStream('path/to/file.mp3'));
+
+// send a custom json message template
+const messageTemplate = WP.Message.Template(payload)
 ```
 
 Then specify IDs and send the message away!
