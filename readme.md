@@ -17,7 +17,7 @@ To install the package, simply run:
 npm install workplace --save
 ```
 Then, simply load up the package and set the access token:
-```
+```javascript
 const WP = require('workplace');
 WP.setAccessToken(<ACCESS_TOKEN_HERE>);
 ```
@@ -27,7 +27,7 @@ WP.setAccessToken(<ACCESS_TOKEN_HERE>);
 ### Making a Post
 
 Once the package is set up, you can post to a group like this:
-```
+```javascript
 const groupID = <YOUR_GROUP_ID>;
 const data = {
   message: 'text body of the message',
@@ -48,11 +48,10 @@ Workplace integrations have the ability to send a variety of message types direc
 
 This wrapper includes a few useful abstractions to make sending a message simple.
 
-
 Use the `WP.Message` namespace to construct a message of various types:
 
 To send a text message, use the `WP.Message.Text` wrapper to generate your message
-```
+```javascript
 // text messages
 const message = WP.Message.Text('hello, world');
 
@@ -73,14 +72,14 @@ const messageTemplate = WP.Message.Template(payload)
 ```
 
 Then specify IDs and send the message away!
-```
+```javascript
 await WP.sendMessage(<id(s)>, message);
 ```
 
 ### FB API Object
 
 The FB API is directly exposed for anything that this API wrapper does not include. It can be accessed in the following way:
-```
+```javascript
 const fbAPI = WP.api;
 ```
 This API is taken from the [npm package FB](https://www.npmjs.com/package/fb)
