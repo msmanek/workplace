@@ -1,6 +1,5 @@
 const MessageTypes = require('../util/MessageTypes.js');
 
-
 module.exports = {
   getRecipientPayloadObject: (recipient) => {
     if (typeof recipient === 'string' && recipient.indexOf('@') !== -1) {
