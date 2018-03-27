@@ -1,12 +1,12 @@
 {
   "name": "workplace",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "API wrapper for Workplace ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "LukeWalsh",
+  "author": "LukeWalsh and msmanek",
   "license": "ISC",
   "dependencies": {
     "fb": "^2.0.0"
